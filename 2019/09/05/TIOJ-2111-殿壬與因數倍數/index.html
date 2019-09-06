@@ -183,7 +183,7 @@
 <p>然後寫一寫送上去就得到一個$\color{gray}{\text{TLE}}$了QQ。</p>
 <p>這時候就只要再開一個$\text{gcd}$陣列跟$\text{lcm}$數組分別紀錄他們的$\text{cnt[i]*cnt[j]}$，就可以把原本的三層迴圈變成兩個兩層迴圈。</p>
 <p>虛擬碼:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; ++i)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t; ++j)&#123;</span><br><span class="line">    gcd[min(i,j)] += cnt[i] * cnt[j];</span><br><span class="line">    lcm[max(i,j)] += cnt[i] * cnt[j];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; ++i)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t; ++j)&#123;</span><br><span class="line">  	tmp += min(i,j) * cnt[j] * lcm[i];</span><br><span class="line">    tmp += max(i,j) * cnt[j] * gcd[i];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">res = res * fastpower(prime,tmp % (mod - <span class="number">1</span>)) % mod;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; ++i)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t; ++j)&#123;</span><br><span class="line">    gcd[min(i,j)] += cnt[i] * cnt[j];</span><br><span class="line">    lcm[max(i,j)] += cnt[i] * cnt[j];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; ++i)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t; ++j)&#123;</span><br><span class="line">    tmp += min(i,j) * cnt[j] * lcm[i];</span><br><span class="line">    tmp += max(i,j) * cnt[j] * gcd[i];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">res = res * fastpower(prime,tmp % (mod - <span class="number">1</span>)) % mod;</span><br></pre></td></tr></table></figure>
 
 <p>特別感謝$\color{purple}{HNO_2}$提供此題大部分的想法。</p>
 <p>Code:</p>
@@ -207,9 +207,9 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Math/"># Math</a>
-                    
                         <a href="/tags/TIOJ/"># TIOJ</a>
+                    
+                        <a href="/tags/Math/"># Math</a>
                     
                         
                 </span>
@@ -221,6 +221,8 @@
             </div>
         </section>
         <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2019/09/06/Codeforces-1092-Problem-F/">Codeforces 1092 Problem F</a>
             
             
             <a class="next" rel="next" href="/2019/09/01/Codeforces-1207-Problem-D/">Codeforces 1207 Problem D</a>
