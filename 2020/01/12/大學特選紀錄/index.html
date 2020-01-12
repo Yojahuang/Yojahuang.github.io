@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>大學特選紀錄 | Yojahuang&#39;s blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Yojahuang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Yojahuang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">大學特選紀錄</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Yojahuang</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">一月 12, 2020&nbsp;&nbsp;20:26:07</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/紀錄/">紀錄</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h2><p>以下文章將會分成幾個段落來介紹</p>
+<ol>
+<li>前言</li>
+<li>自介</li>
+<li>選校</li>
+<li>備審</li>
+<li>面試</li>
+<li>給有志特選資工系學弟妹的建議</li>
+</ol>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>哈囉~我是109級應屆的資工系特選考生，以下是我面試五間大學的特選心得，希望能幫助到之後有需要的學弟妹。</p>
+<p>以下是我面試五間大學的結果：</p>
+<ol>
+<li>國立交通大學-備取一</li>
+<li>國立清華大學-備取一</li>
+<li>國立成功大學-正取三</li>
+<li>國立台灣師範大學-正取二</li>
+<li>國立中央大學-備取六</li>
+</ol>
+<h2 id="自介"><a href="#自介" class="headerlink" title="自介"></a>自介</h2><p>第一次寫那種一行一行的程式大概是在國中二年級，後來上了高一因為在校內的多元選修表現突出<br>進而被老師拉進了演算法校隊，後來在高中三年獲得不少代表學校比學科能力競賽以及奧林匹亞初選的資格。</p>
+<p>我在高中三年所累積的獎項大致如下:    </p>
+<ul>
+<li>107學年度校內學科能力競賽資訊科 第二名</li>
+<li>107學年度分區學科能力競賽資訊科 第一名</li>
+<li>第20屆網際網路程式設計全國大賽 入選決賽</li>
+<li>107學年度全國資訊學科能力競賽決賽 三等獎</li>
+<li>108學年度校內學科能力競賽資訊科 第一名</li>
+<li>108學年度分區學科能力競賽資訊科 第一名</li>
+<li>第21屆網際網路程式設計全國大賽 入選決賽</li>
+<li>108學年度全國資訊學科能力競賽決賽 三等獎</li>
+</ul>
+<p>我認為自己在演算法競賽中的成績不算太好，所以這邊就不特別花篇幅介紹算法競賽。</p>
+<h2 id="選校"><a href="#選校" class="headerlink" title="選校"></a>選校</h2><p>在選校時我的建議會是要先了解自己在應屆考生中的相對排名，以及各大學的選才方向。<br>以我本身為例，我在報名時錯估了中央大學的選才方向。<br>在中央面試時教授就很擺明的跟我說要我去考學測，並且透過個人申請APCS組來他們系。<br>而我在清大面試時，我就很明顯的感覺到我跟清大的步調是比較接近的，在面試時教授也對我很滿意，給了我不少信心。<br>所以我認為挑選才方向與你本身相近的大學是很重要的，以免浪費了彼此的時間以及報名費和通車費。</p>
+<h2 id="備審"><a href="#備審" class="headerlink" title="備審"></a>備審</h2><p>在備審方面，我在清大的說明會時有聽到他們負責的主任說其實他們不太在乎排版<br>所以我就決定在這方面走一個簡潔風，並把製作備審大部分的時間投入在內容。<br>我覺得在製作備審時可以去思考，教授希望看到你的哪些特質？<br>以下是我在跟老師多次討論過後，統整出我們認為教授「可能」會希望看到的東西</p>
+<ul>
+<li>逆境向上</li>
+<li>自學能力</li>
+<li>對該領域的熱忱</li>
+</ul>
+<h2 id="面試"><a href="#面試" class="headerlink" title="面試"></a>面試</h2><p>我面試的順序是<br>中央 成大 清大 師大 交大<br>那接下來會稍微帶過五間大學面試的情形</p>
+<h3 id="中央"><a href="#中央" class="headerlink" title="中央"></a>中央</h3><p>當天面試時，我跟一群朋友們發現面試順序是照著初試成績排下來的。<br>而我的位置在第九個，離正取的前二名有非常大的差距，所以我就大概猜到了中央教授等等會說什麼。<br>果不其然面試時教授就建議我去考學測，並且把校內的課業顧好。<br>感覺得出來他們沒有很想收高中時走演算法競賽的學生。<br>面試完後朋友們就開始安慰我，不過這多多少少影響到了我自己的心情。<br>所以我才會覺得一開始報名時就要選校是很重要的環節。</p>
+<h3 id="成大"><a href="#成大" class="headerlink" title="成大"></a>成大</h3><p>成大的面試在中央面試隔一天的早上，成大的部分我覺得他們沒有中央那麼在乎你校內的成績。</p>
+<p>面試時桌上有一張白紙，上面有三道演算法的題目。</p>
+<ol>
+<li>給你一個序列，請你找出該序列中的絕對眾數（保證存在）。</li>
+<li>一開始袋子內有500顆紅球、500顆藍球，每次你會從袋子中抽兩球不放回，<br>如果球的顏色一樣就放一顆紅球進去袋子裡面，否則的話放一顆藍球進去。</li>
+<li>給你一個二維grid，每個格子只有0或1兩種狀態，請你求出二維grid中，1的聯通塊有幾塊。</li>
+</ol>
+<p>教授一開始先叫我自我介紹，然後試著解答紙上的題目，之後便開始問一些跟我高中生活有關的題目<br>在結束時教授問我還有報哪些學校，以及你自己對這幾間學校的志願序。</p>
+<h3 id="清大"><a href="#清大" class="headerlink" title="清大"></a>清大</h3><p>清大的面試分成兩關，各十分鐘<br>第一關問了自我介紹以及高中生活還有學習資訊的動機與過程<br>第二關則是總共丟給我三題演算法的題目</p>
+<ol>
+<li>如何用$O(n)$的記憶體印出巴斯卡三角形的前n層</li>
+<li>$n!$以十進位展開時，後綴會有幾個0，並且試著推廣到任意進位。</li>
+<li>$C^n_k$以十進位展開時，後綴會有幾個0，並且試著推廣到任意進位。</li>
+</ol>
+<p>由於我這三題做得很快，所以教授叫我也分享一題覺得有趣的題目。<br>所以我就分享了一題跟質因數分解相關的數論題。</p>
+<h3 id="師大"><a href="#師大" class="headerlink" title="師大"></a>師大</h3><p>師大的面試內容也是分成兩關，兩關都是在問跟個人相關的問題，沒有問到資訊相關的專業題目。<br>其中包括了<code>選校動機</code>、<code>學校志願序</code>、<code>在校成績</code>、<code>上大學後的規劃</code>。</p>
+<h3 id="交大"><a href="#交大" class="headerlink" title="交大"></a>交大</h3><p>交大的面試只有一關七分鐘左右，開場先自我介紹。<br>然後就塞給你一張題目以後就叫你邊回答他的問題邊想他塞的題目。<br>據說交大教授這麼做的用意是要讓考生認真想他塞的題目，進而沒有時間去仔細思考要怎麼回答他問的題目。<br>這樣考生比較能夠講出內心真正的答案。<br>我拿到的三題如下：</p>
+<ol>
+<li>題目是給你一個序列的遞迴式，讓你證明他給的關係式，但由於題目太長所以我不記得這題的細節了。</li>
+<li>請在沒有condictional的架構下，實作出gcd函式。</li>
+<li>請構造出一圓使得該圓的圓周通過1000+個整數格子點。</li>
+</ol>
+<h3 id="統整"><a href="#統整" class="headerlink" title="統整"></a>統整</h3><p>在面試五間大學時，除了交大以外，教授都有問同樣的一個問題就是「你還有報哪些學校，以及你的志願序是如何」<br>我認為這個問題是想聽你對於各個大學的看法，順便去了解你有沒有對選校去做功課。<br><strong>如果你只是看到校名就來報名，然後沒有對該大學做足功課，我認為這在教授心中是扣分的。</strong></p>
+<p>再來特選的問題不是固定的，唯一相同的地方是，不管哪個考生他都會叫你先自我介紹。<br><strong>每個學生拿到的問題的差異性其實非常大。</strong><br>所以我認為面試時除了自我介紹以及我剛剛提到的志願序以外，不需要特別準備。<br>有幾分實力就講幾分話，並且把自己的優勢跟自信展現出來，這樣就夠了。</p>
+<h2 id="給有志特選資工系學弟妹的建議"><a href="#給有志特選資工系學弟妹的建議" class="headerlink" title="給有志特選資工系學弟妹的建議"></a>給有志特選資工系學弟妹的建議</h2><p>既然都踏入資訊領域了，有很多東西可以去慢慢摸索，最重要的是要保持自己的熱情。<br>如果你對資訊領域沒有非常熱衷，這條路會走得非常辛苦。</p>
+<p>我建議可以找一個朋友一起努力，以我自己為例我在高一時認識了一個學校離我非常近的朋友。<br>我跟他一起學習資訊知識，一起在比賽中擦亮各自學校的招牌，他也在特選中錄取了交大資工系。</p>
+<p>在學習資訊時也盡量讓自己擁有多元的技能，網頁前後端、伺服器、演算法、開發都可以碰碰看。</p>
+<h3 id="特選大方向"><a href="#特選大方向" class="headerlink" title="特選大方向"></a>特選大方向</h3><p>在特選的榜單中，名列前茅的學生大致可以分成以下幾種</p>
+<ul>
+<li>演算法競賽</li>
+<li>資安競賽</li>
+<li>做專案</li>
+</ul>
+<p>演算法競賽如果你能進入資奧第一階段，那特選差不多就穩了？</p>
+<p>資安競賽我不是很了解，我只知道很多朋友是在CTF的比賽中邊做邊學，然後參與許多社群活動精進自己。</p>
+<p>專案的話比較有名的大概就是製作板中午餐系統的那群學生，實務能力也是蠻重要的一環，成大的乙組好像特別喜歡這種類型的學生。</p>
+<p>有一個重點是如果你想在特選中至少有中字輩的學校能念，那我認為APCS的成績是絕對不能少的<br>APCS至少要拿到觀念四實作四的成績。<br>我稍微探聽了其他有正取或者是備取很前面的學生，沒有人的APCS低於這個成績。</p>
+<p>以下是我認為各校比較喜歡的類型</p>
+<ul>
+<li>交大: 演算法、資安</li>
+<li>清大: 演算法</li>
+<li>成大: 專案、資安</li>
+<li>中央: 資安</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/大學/"># 大學</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2019/12/22/紀錄-atom好用插件/">[紀錄]atom好用插件</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Yojahuang | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
