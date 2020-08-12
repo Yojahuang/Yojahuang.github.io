@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+<title>高中競程心路歷程 | Yojahuang&#39;s blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Yojahuang&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Yojahuang&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">高中競程心路歷程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Yojahuang</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">八月 12, 2020&nbsp;&nbsp;11:15:03</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/紀錄/">紀錄</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>高中三年過得真快，轉眼間就被踢出校園了<br>前陣子打完了YTP複賽 那是我以高中生名義的最後一場比賽<br>百感交集 決定紀錄一下這三年的心得</p>
+<h1 id="升高中時我在幹嘛"><a href="#升高中時我在幹嘛" class="headerlink" title="升高中時我在幹嘛"></a>升高中時我在幹嘛</h1><p>其實在上高中前我的升學志向已經大致確定<br>就是電機或資工之類的，所以我剛開學就知道自己要選什麼選修<br>我選了程式設計的選修，很幸運地在高一上就選到 又很幸運的遇到了開明的老師<br>選修課的政忠老師很年輕，所以其他校學生常常抱怨的老古板的老師的情況我沒遇到過<br>那時我在選修課上是唯一在國中就寫過程式的學生，所以我學得特別輕鬆<br>老師發現這件事後很快就把我拉進了校隊跟學長一起練習之類的</p>
+<h1 id="校隊生活"><a href="#校隊生活" class="headerlink" title="校隊生活"></a>校隊生活</h1><p>進校隊的前一個月我開始進步 原本只是個會被迴圈搞得暈頭轉向的小菜雞<br>後來就熟悉了一些基本的知識 然後順便問了一下在國中時聽說過的學科能競<br>老師說我們主要的對手是隔壁校的學生<br>我又查了一下發現隔壁校有個同學跟我同屆 然後他高一就在能競拿了分區第一名<br>高一時政忠老師剛下教務處行政，他很忙，後來我就自己在網路上找到學習資源<br>花了很多時間學習以後我在校隊變得突出<br>我那時候以為自己超強，現在想起來都覺得羞恥</p>
+<h1 id="打聽特殊選才"><a href="#打聽特殊選才" class="headerlink" title="打聽特殊選才"></a>打聽特殊選才</h1><p>時間過得很快 高一上期末時發生了一件讓我非常驚訝的事情<br>就是校隊的學長用特殊選才上了成大資工<br>但他的APCS成績其實跟那時的我差不多<br>所以我就開始打聽特殊選才是什麼東西<br>默默立下了要用特選上清交的目標</p>
+<h1 id="遇到摯友"><a href="#遇到摯友" class="headerlink" title="遇到摯友"></a>遇到摯友</h1><p>到了高一下 我在Zerojudge刷了兩百題 然後就去比了資奧初選<br>但那時我還很菜 拿了全國第70名的成績<br>這場比賽最大的收獲是也認知到自己放到全國多麼渺小<br>同時認識了那個隔壁校的同學</p>
+<p>比完那場賽後我們在一個網路論壇討論那個比賽的題目<br>聊了一陣子以後我就去加他的臉書<br>最後我們變成無話不談的好友</p>
+<p>我覺得打競賽熱情是一個重要的元素<br>如果你沒有一個好朋友每天陪在你旁邊一直講題目<br>你的熱情會消磨得很快<br>這點在第一志願跟普通社區高中的差別非常明顯</p>
+<h1 id="志向"><a href="#志向" class="headerlink" title="志向"></a>志向</h1><p>那開始大幅進步其實是在高一的暑假<br>我去參加了台南一中資訊社的暑訓<br>那是我第一次當面聽圈內人的課<br>講師高中時是充滿競賽經驗的選手<br>所以他講了很多在網路上很難查到的知識<br>也認識了一些南一中同屆的學生<br>在那個暑假我的收穫滿滿，也相信自己有天能成為像講師一樣厲害的競賽選手<br>然後開始瘋狂許願 每天腦中都只有那年12月的全國賽 希望能拿到三等獎</p>
+<h1 id="高一在幹嘛懶人包"><a href="#高一在幹嘛懶人包" class="headerlink" title="高一在幹嘛懶人包"></a>高一在幹嘛懶人包</h1><ol>
+<li>狂刷Zerojudge 整個高一我刷了250題</li>
+<li>狂跟圈內人裝熟 結果發現他們也很想認識我</li>
+<li>狂看Youtube上中山大學資料結構的開放式課程</li>
+<li>狂看Youtube上資訊之芽的影片 這在我不能出遠門去台南學習時幫助最大</li>
+<li>跟政忠老師說明我的目標，期望能獲得他的幫助 後來也真的得到了</li>
+</ol>
+<h1 id="高二分區複賽-初次體驗到成就感"><a href="#高二分區複賽-初次體驗到成就感" class="headerlink" title="高二分區複賽 初次體驗到成就感"></a>高二分區複賽 初次體驗到成就感</h1><p>到了高二分區複賽，我的練習方向已經變成求穩了<br>因為我高一的校內賽粗心被學長搶走第一名的位置<br>所以分區複賽我壓力其實很大，怕自己不是輸在實力而是輸在細心度<br>那時是我高二壓力數一數二大的時候，每天我都會拉肚子<br>因為我心想如果高二沒有在能力競賽拿到好的成績 特選會變得很辛苦<br>然後我也有在Zerojudge上模擬每次全國賽的考試 我的分數有幾次高於三等獎的線<br>所以我很確定自己的實力應該可以在分區複賽拿到前二名</p>
+<p>然後分區複賽就是我跟我朋友幾乎碾壓全場<br>雖然主辦方在一些題目的評測亂搞事 害我朋友只有第三名<br>不過第二名的學長決定放棄全國賽的資格讓給我朋友<br>我就跟他一起去了全國賽<br>到這個時候我已經95%確定我特選至少能上成大資工了<br>但我還是很想在全國賽拿到好的成績 讓自己能夠朝交清資工更近一步</p>
+<h1 id="高二全國賽-運氣加持"><a href="#高二全國賽-運氣加持" class="headerlink" title="高二全國賽 運氣加持"></a>高二全國賽 運氣加持</h1><p>高二全國賽時我的實力還是有點不夠<br>我那時還不會思考包裝過的題目 不過現在也沒很擅長<br>結果全國賽就考了一題不太好寫 但是完全沒包裝的題目<br>以下是全國賽的回憶</p>
+<p>題目有8題 看完題目後覺得有把握的分數是257分<br>依照往年的成績來看 要有400分才有辦法拿獎<br>但題目看起來比去年難 我估計三等獎需要380分左右<br>所以我在快速寫完其中兩百分後 開始找尋可以再多拿分的題目<br>這時我撿起第四題 畫了一下圖後覺得應該可以拿到34分<br>雖然還差90分左右 但不拿白不拿<br>我就寫了那題寫了一個半小時 中途我一直相信自己可以做到<br>寫完送上去時我拿到了65分 我就滿頭問號<br>為什麼我拿到了這麼多分數啊 才發現自己的想法好像是正解<br>但剩下35分是 TLE 所以我開始壓常數<br>壓了二十分鐘以後我就拿到了滿分<br>然後接著我依序把一開始覺得可做的57分寫完<br>讓自己冷靜下來<br>在結束前的50分鐘我又發現還有20分可以拿到<br>我就一路寫到快結束時才寫完 最後以377分收場</p>
+<p>結束後我發現我拿到了全國第14名<br>這是我們學校有史以來最好的成績<br>我當下真的很開心 覺得自己的目標快實現了<br>但好朋友沒考好 所以我就低調一點的慶祝</p>
+<p>高二的全國賽運氣真的太好<br>後來回家想起這件事時還曾經感動到哭</p>
+<p>還有件有趣的事 高二的全國賽是在交大考的<br>在考試的前一天老師還建議我去北大門的土地公廟拜拜<br>讓土地公保佑我上交大 結果我忘了去 高三時還是上了交大<br>而我另外一個朋友在高三時瘋狂拜土地公 結果落榜交大百川<br>然後他就開始不拜土地公 最後順利上了交大電機系</p>
+<h1 id="高二在學校上課的狀況"><a href="#高二在學校上課的狀況" class="headerlink" title="高二在學校上課的狀況"></a>高二在學校上課的狀況</h1><p>高二我拿到分區第一後，我已經確定自己不會再用學測的管道升學<br>然後我從小就不喜歡故意去回應別人對我的期待<br>我本來就是不喜歡唸書的人 所以我在學校的時間分配變成3:7<br>其中的3是上數學課以及用手機學習資訊的知識 7是玩手機抒發壓力因為那時我做了更大的夢<br>那時我的夢是用選訓營上台大 不過最後沒有達成<br>這個夢對我來說更加沈重 我很慶幸上高三時沒有繼續抱著這個夢<br>而學校的老師看我很少在上課 好像蠻討厭我的<br>加上我比賽打得不錯 那時在學校是個有頭有臉的人<br>所以老師覺得我很跩 尤其是班導 上了高三以後他開始瘋狂針對我<br>後來高三我就很少去學校了<br>這邊我不建議其他人模仿我這個模式 這樣風險很大 我是確定特選能上大學才敢這樣賭的</p>
+<h1 id="高二-選訓營選拔"><a href="#高二-選訓營選拔" class="headerlink" title="高二 選訓營選拔"></a>高二 選訓營選拔</h1><p>很簡單 我炸掉了<br>那時我挺挫折的 花了蠻長時間才重拾信心<br>我在全國賽拿到全國第14名 在選訓營初選只拿到全國40名<br>高二下這段時間我拿去沈澱自己 因為我覺得特選很穩 所以一直沒寫程式<br>我還有思考過自己想要的是什麼<br>最後我拿這段時間跟同班同學換來了滿滿的高中回憶</p>
+<h1 id="高三-特選"><a href="#高三-特選" class="headerlink" title="高三 特選"></a>高三 特選</h1><p>接著上了高三就是特殊選才的故事啦<br>特選壓力也很大（怎麼每次都壓力大）<br>所以我很少去學校 8月到11月我都是邊準備全國賽邊準備面試<br>這段時間練習非常密集 我也終於把實力提高到能穩穩得獎了<br>面試則是得到了政忠老師以及鳳新輔導室的幫助<br>我在這段時間也學了一些競賽以外的資訊知識 透過特選也認識了好多資訊圈的朋友<br>然後我們這群好朋友（約10個）就經常半夜不睡覺討論特選的事情<br>最後我們都特選上了清大交大 這段日子壓力很大但也很快樂</p>
+<h1 id="高三-分區複賽"><a href="#高三-分區複賽" class="headerlink" title="高三 分區複賽"></a>高三 分區複賽</h1><p>我碾壓 第一名沒有懸念</p>
+<h1 id="高三-全國賽"><a href="#高三-全國賽" class="headerlink" title="高三 全國賽"></a>高三 全國賽</h1><p>考全國賽前壓力超大 因為很想拿全國前十<br>結果就小失常了 最後拿下了全國第13名<br>準備全國賽很不快樂 但比賽的當下我很快樂</p>
+<h1 id="給想透過競賽升學的人的話"><a href="#給想透過競賽升學的人的話" class="headerlink" title="給想透過競賽升學的人的話"></a>給想透過競賽升學的人的話</h1><p>投資競賽有賺有賠 請衡量風險<br>但是真的很賺<br>如果你高中被 成就感、比賽獎金、升學優勢 這三件事填滿<br>你會學習到要怎麼做好一件事 除了放掉課業的部分以外我都很推薦<br>希望學弟妹們有天能看到我在高中比賽中看到的東西<br>那些強大的第一志願的同學 壯觀的比賽現場 以及透過比賽累積的心得</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/資訊競賽/"># 資訊競賽</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/01/12/大學特選紀錄/">大學特選紀錄</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Yojahuang | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
