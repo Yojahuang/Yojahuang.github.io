@@ -7,7 +7,7 @@
 
 
 
-<title>Codeforces 1391 Problem D | Yojahuang&#39;s blog</title>
+<title>Codeforces Round 1395div2 | Yojahuang&#39;s blog</title>
 
 
 
@@ -205,7 +205,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Codeforces 1391 Problem D</h1>
+            <h1 class="post-title">Codeforces Round 1395div2</h1>
             
                 <div class="post-meta">
                     
@@ -214,7 +214,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 12, 2020&nbsp;&nbsp;21:07:13</a>
+                        Date: <a href="#">八月 13, 2020&nbsp;&nbsp;16:22:31</a>
                         </span>
                     
                     
@@ -230,16 +230,54 @@
         </header>
 
         <div class="post-content">
-            <blockquote>
-<p>給你一個 $n \times m$ 的01矩陣 其中 $1 \leq n \leq m \leq 10^6, 1 \leq n \times m \leq 10^6$</p>
-<p>問你最少要修改幾格 才能使得矩陣中所有 $2k \times 2k$ 的子矩陣的總和為奇數</p>
-<p>如果怎麼改都不能符合要求 那就輸出-1</p>
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在打這場時，靠著假解拿到蠻前面的名次<br>不過system test後就掉下去了<br>依我的狀況來說 能一次打五題其實很難得 所以就記錄一下吧</p>
+<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><blockquote>
+<p>給你 a 個 ‘a’ 字元 b 個 ‘b’ 字元 c 個 ‘c’ 字元 d 個 ‘d’ 字元</p>
+<p>你可以進行以下操作無限次</p>
+<p>將 a b c 各 -1 然後將 d 替換成 d + 3</p>
+<p>問經過任意次操作後 是否能將字元排成回文</p>
+<p>$(0 \leq a, b, c, d \leq 10^9)$</p>
 </blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>這題在virtual時一直做不出來<br>後來看了解才發現自己做錯方向<br>我覺得我在做這題時犯了不少錯誤 決定寫一篇文記錄下來</p>
-<h1 id="賽中的思路"><a href="#賽中的思路" class="headerlink" title="賽中的思路"></a>賽中的思路</h1><p>virtual時原本是想說<br>對於每個點 我可以枚舉每個子矩陣的右上角 然後用資料結構去檢查 $2k \times 2k$ 的子矩陣<br>後來我觀察到對於每個子矩陣在滑動右上角時 只需要關心上面那排跟下面那排的奇偶性<br>之後我又證明了 我只要care每個 $2 \times 1$ 的子矩陣 以及 $1 \times 2$ 的子矩陣<br>很顯然我這題完全做錯方向 所以就一直燒機到virtual結束<br>中間我有嘗試想要感受什麼樣的情況下會無解 但沒有感受到</p>
-<h1 id="正解"><a href="#正解" class="headerlink" title="正解"></a>正解</h1><p><img src="https://i.imgur.com/OHywqKW.jpg" alt></p>
-<p>從圖中可以發現 對於 $4 \times 4$ 的矩陣 如果符合題目要求<br>那左上右上左下右下的 $2 \times 2$ 的子矩陣總合都得是奇數<br>這樣的話 $4 \times 4$ 的 矩陣總和就不可能是偶數<br>所以代表說 只要測資給的矩陣中 能夠找到 $4 \times 4$ 的子矩陣<br>那這筆測資就不可能有解<br>所以問題就簡單啦<br>我們只要分別做 $1 \times m$ 跟 $2 \times m$ 跟 $3 \times m$ 的部分就好<br>$1 \times m$ 的情況下答案就一定是0<br>$2 \times m$ 跟 $3 \times m$ 則是可以簡單的位元DP題目而已<br>後來補題時我還嘗試打表mask 不過 $n = 3$ 的情況一直弄錯<br>我想說寫成程式會很麻煩 但最後寫了發現非常簡單<br>這就是實作上的失誤了 只能靠多練習來補強</p>
-<h1 id="反省"><a href="#反省" class="headerlink" title="反省"></a>反省</h1><p>那 就希望接下來練習可以趕快變強<br>努力練習讓自己能夠少失誤一點 想題快一點 寫題也穩一點<br>畢竟快上大學了 ICPC得更加努力 不然其他隊看起來都好強<br>希望能夠出國去比地區賽啦</p>
+<p>如果要排出回文的話， abcd最多只能有一個是奇數<br>所以我們可以分別檢查 $(a, b, c, d)$ 以及 $(a - 1, b - 1, c - 1, d + 3)$ 的奇偶性<br>這樣這題就做完了</p>
+<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><blockquote>
+<p>有一個 $n \times m$ 的二維Grid，沒有任何障礙物</p>
+<p>你有一個棋子在 $(x, y)$ 上，而棋子的移動規則跟西洋棋的城堡一樣</p>
+<p>請你構造出一種走法 使得你可以經過每個點剛好一次且 $(x, y)$ 是起點</p>
+<p>$(3 \leq n,m \leq 100, 2 \leq x \leq n - 1), (2 \leq y \leq m - 1)$</p>
+</blockquote>
+<p>一開始沒有看到要令 $(x, y)$ 是起點 吃了一次WA<br>這題應該有很多做法<br>我的構造法是 先把 $x$ 那排走完 再依序走 $1$ 到 $n$ 排<br>好好記錄走完上一排時在哪一格就可以了</p>
+<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><blockquote>
+<p>給你長度為 $n$ 的 $a$ 序列跟長度為 $m$ 的 $b$ 序列</p>
+<p>令 $c_i = a_i$ &amp; $b_j$ (bitwise AND)</p>
+<p>其中 $j$ 是由你決定的，且對於每個不同的 $i$ 你可以選重複的 $j$</p>
+<p>請求出最小的 $c_{1} | c_{2} | c_{3} … | c_{n}$ (bitwise OR)</p>
+<p>$(1 \leq n,m \leq 200, 0 \leq a_i, b_i &lt; 2^9)$</p>
+</blockquote>
+<p>這是基本的DP，狀態就 $dp(i, prefix) = dp(i + 1, prefix | (a_{i}$ &amp; $b_{j}))$<br>prefix 就是前綴 bitwise OR 起來的狀態， i 代表說現在正在決定 $c_i$<br>不過賽中的時候忘了好好標記 vis 陣列 吃了一次 TLE</p>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><blockquote>
+<p>給你一個長度為 $n$ 的序列 $a$</p>
+<p>你有 $n$ 個回合 每個回合你可以從序列中選擇一個元素並且將其從序列中刪除</p>
+<p>被你選到的元素會對答案貢獻 $a_i$</p>
+<p>如果被你選到的 $a_i &gt; m$ 的話，你接下來會有 $d$ 個回合不能選元素</p>
+<p>求最大化的答案是多少</p>
+<p>$(1 \leq d \leq n \leq 10^5, 0 \leq m \leq 10^9, 0 \leq a_i \leq 10^9)$</p>
+</blockquote>
+<p>敘述的有點爛 如果看不懂再點回去原題看吧</p>
+<p>賽中一開始是中毒想用DP去做<br>後來才想到說先把序列分成兩組 一組 $&gt; m$ ，一組 $\leq m$<br>然後枚舉我要取幾個 $&gt; m$ 的元素，每次都拿其中最大的，用資結維護這件事<br>再用國小數學算一下在這樣的情況下<br>另外一組還能拿幾個元素，一樣盡量拿最大的，就可以收工了</p>
+<p>後來發現這題會FST的原因是因為我把 $\leq$ 打成 $&lt;$ 然後會過pretest也是有點神奇</p>
+<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><blockquote>
+<p>給你一張有向帶邊權圖 $n$ 個點 $m$ 條邊</p>
+<p>每條邊的邊權不會重複，且每個點的出度 $\leq k$</p>
+<p>問你有多少個 tuple （長度 $k$，以 $c_1$ ~ $c_k$ 表示 ）滿足以下條件</p>
+<p>對於每個點，先設其入度為 $d$ ，之後把那個點連接的所有邊刪掉除了邊權第 $c_d$ 小的那條邊</p>
+<p>把所有該刪的邊刪完後，如果新的圖是一個長度為 $n$ 的有向環的話 那該 tuple 就符合條件</p>
+<p>$(2 \leq n \leq 2 \cdot 10^5,2 \leq m \leq min(2 \cdot 10^5, n(n-1)),1 \leq k \leq 9, 1 \leq c_i \leq i)$</p>
+</blockquote>
+<p>一樣先道歉我敘述的有點爛 如果看不懂再點回去原題看吧</p>
+<p>這題會過pretest我後來也很問號，賽中時我把自己寫的解的複雜度算錯<br>我當下以為我的解是 $O(k^2n)$，送上去一開始TLE 壓常以後過了pretest<br>隔天發現我FST了 問了一下朋友才知道我是 $O(k!n)$ ，然後滿頭問號為什麼會過pretest<br>之後就被朋友爆雷正確的做法 這邊給上 $O(n + k! + m)$ 的做法</p>
+<p>我原本的做法是枚舉 $k!$ 種 tuple 然後 $O(n)$ 檢查有向環<br>正確的做法是用Hash去檢查是不是有向環（Hash: 哈哈是我啦，你們是不是都以為有確定性的做法啊）<br>這樣就能透過預處理去算 我不太會解釋 我就附上官解連結吧<br><a href="https://codeforces.com/blog/entry/81355" target="_blank" rel="noopener">點我</a></p>
+<h1 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h1><p>我寫這篇心得只是想分享我用各種奇怪方式過了 pretest<br>FST以後才發現自己錯爆，有點傻眼，有種後測的感覺<br>把 $\leq$ 打成 $&lt;$ 是蠻大的失誤的<br>這場 E 也讓我理解到原來 Hash 還能這樣用啊<br>我現在還不夠強 大概率會開始強迫自己每天都要練題</p>
+<p>想題是一件很快樂的事，但一直沒有好的成績時又有點焦慮<br>既然講好要打ICPC就要認真打 同時希望自己之後能更加享受比賽的樂趣。</p>
 
         </div>
 
@@ -260,6 +298,10 @@
                     
                         <a href="/tags/Codeforces/"># Codeforces</a>
                     
+                        <a href="/tags/Data-Structure/"># Data Structure</a>
+                    
+                        <a href="/tags/Graph/"># Graph</a>
+                    
                         <a href="/tags/DP/"># DP</a>
                     
                         <a href="/tags/Greedy/"># Greedy</a>
@@ -275,10 +317,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/08/13/Codeforces-Round-1395div2/">Codeforces Round 1395div2</a>
             
-            
-            <a class="next" rel="next" href="/2020/08/12/高中競程心路歷程/">高中競程心路歷程</a>
+            <a class="next" rel="next" href="/2020/08/12/Codeforces-1391-Problem-D/">Codeforces 1391 Problem D</a>
             
         </section>
 
