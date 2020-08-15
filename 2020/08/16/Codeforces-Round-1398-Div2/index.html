@@ -231,14 +231,35 @@
 
         <div class="post-content">
             <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>這場其實E不太難 感覺他想考的是實作<br>剛好我現在又不太擅長大資結的題目<br>以前蠻愛做的 但那是高二的時候了 現在對這種題目都沒有太大的把握<br>這場比賽體會到自己還是逃不掉這種題目 而且我們隊三個人好像都不太擅長這種題<br>所以有時間會再補這題<br>如果我們隊三個人至少有一個人要會的話 那就我來做吧 這是少數我能貢獻給隊伍的</p>
-<p>這篇文就分別附上我會的五題 其他題我還不會QQ</p>
+<p>這篇文就分別附上我會的五題 其他題我還不會</p>
 <h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><blockquote>
 <p>給你一個長度為 $n$ 的序列 $a$</p>
 <p>問你有沒有可能從該序列中挑出三個元素 使得那三個元素拼不出三角形</p>
 <p>如果有 輸出那三個元素的編號</p>
+<p>$(3 \leq n \leq 5 \cdot 10^4, 1 \leq a_i \leq 10^9, a_{i-1} \leq a_i)$</p>
 </blockquote>
 <p>國小數學告訴我們 三角形兩邊長大於第三邊<br>這時候Greedy的想法就出現了<br>我們只要找最小的兩個元素當兩邊<br>最大的那個當第三邊，然後檢查有沒有大於第三邊，如果有代表那是三角形<br>sort一下 輕鬆沒煩惱<br>這題我在寫的時候 把 $\leq$ 打成 $&lt;$ 了 好像跟上場犯的錯誤差不多</p>
-<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1>
+<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><blockquote>
+<p>給你一個長度 $n$ 的 01字串</p>
+<p>有兩個玩家正在進行一個遊戲 規則如下：</p>
+<p>每回合 玩家會從字串中挑一段連續的 0 或 1 ，然後將其從字串中刪除</p>
+<p>該玩家該回合的得分就是他挑到的那個subarray中 1的個數</p>
+<p>問先手玩家採取最佳的情況下，最高能拿多少分</p>
+<p>$(1 \leq n \leq 100)$</p>
+</blockquote>
+<p>你會發現說 我們根本沒必要去拿連續的0<br>因為當你拿連續的0的時候，你可能會使得原本不相鄰的兩段1接在一起<br>這樣是做球給對方(?)<br>那既然我們確定要拿1了，顯然就是挑最長的連續1拿掉<br>這樣這題就做完了，你只要用迴圈算一下每段1的大小<br>丟進去vector之類的container，sort一下 每次取最大的就好</p>
+<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><blockquote>
+<p>給你一個長度為 $n$ 的序列</p>
+<p>定義 $\displaystyle sum(L,R) = \sum_{i=L}^{R}{a_i}$</p>
+<p>請你輸出有多少 $sum(L,R)$ 符合</p>
+<p>$sum(L,R) = R - L + 1$</p>
+<p>$(1 \leq n \leq 10^5, 0 \leq a_i \leq 9)$</p>
+</blockquote>
+<p>先弄出前綴和陣列 以下叫它 $S$<br>所以我們就等於說要算下面這個東西<br>$sum(l,r) = S_{r} - S_{l-1} = r - l + 1$<br>移項一下變成<br>$S_{r} - r = S_{l-1} - (l-1)$</p>
+<p>這時候可以開一個map<br>對於每個 $i$ 把 $S_{i-1} - (i-1)$ 的個數紀錄起來<br>這樣這題就做完了</p>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><p>現在有點想睡 明天補</p>
+<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><p>現在有點想睡 明天補</p>
+
         </div>
 
         
@@ -260,9 +281,9 @@
                     
                         <a href="/tags/DP/"># DP</a>
                     
-                        <a href="/tags/Data-Structure/"># Data Structure</a>
-                    
                         <a href="/tags/Greedy/"># Greedy</a>
+                    
+                        <a href="/tags/Data-Structure/"># Data Structure</a>
                     
                         <a href="/tags/math/"># math</a>
                     
@@ -278,7 +299,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2020/08/13/Codeforces-Round-1395div2/">Codeforces Round 1395div2</a>
+            <a class="next" rel="next" href="/2020/08/13/Codeforces-Round-1395-Div2/">Codeforces Round 1395(Div2)</a>
             
         </section>
 
