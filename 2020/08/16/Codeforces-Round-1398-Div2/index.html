@@ -257,8 +257,27 @@
 </blockquote>
 <p>先弄出前綴和陣列 以下叫它 $S$<br>所以我們就等於說要算下面這個東西<br>$sum(l,r) = S_{r} - S_{l-1} = r - l + 1$<br>移項一下變成<br>$S_{r} - r = S_{l-1} - (l-1)$</p>
 <p>這時候可以開一個map<br>對於每個 $i$ 把 $S_{i-1} - (i-1)$ 的個數紀錄起來<br>這樣這題就做完了</p>
-<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><p>現在有點想睡 明天補</p>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><blockquote>
+<p>你有 $R$ 對 紅色棍子 $G$ 對綠色棍子 $B$ 對藍色棍子</p>
+<p>每次你要挑 出兩對顏色不同的棍子 組成一個長方形</p>
+<p>該長方形對於答案的貢獻是它的面積</p>
+<p>問最大可能的答案</p>
+<p>$(1 \leq R, G, B \leq 200)$</p>
+</blockquote>
+<p>看完這題直覺會想說 那我一直挑最大的兩對出來不過好了<br>但請考慮以下測資</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 1 1</span><br><span class="line">7 7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
+
+<p>如果你選擇最大的兩對 答案只會是72<br>但如果你選 $7 \times 8 + 7 \times 9$ 的話，答案是119<br>所以這個直覺是錯的<br>既然沒有明確的選法，那就好好sort再DP就好囉</p>
+<p>$dp(R, G, B) = max(dp(R-1,G-1,B) + r_{R} \times g_{G}, dp(R,G-1,B-1) + g_{G} \times b_{B}, dp(R-1,G,B-1) + r_{R} \times b_{B})$</p>
 <h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><p>現在有點想睡 明天補</p>
+<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><blockquote>
+<p><a href="https://codeforces.com/contest/1398/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1398/problem/F</a></p>
+<p>我放棄敘述 直接貼連結</p>
+</blockquote>
+<p>聽朋友說F其實不太難，今天去看了一下<br>在有tag提示的情況下想了半小時左右終於做出來了<br>但不確定我的複雜度是多少 有點難估</p>
+<p>我是看到 tag 提示了二分搜以後才開竅的<br>對於每個 $i$ 當作起點 我用二分搜算出那個起點最遠可以拉到多遠 以下叫它 $w_i$</p>
+<p>再來 我枚舉題目敘述的 $x$ 由小到大<br>維護一個 set 裡面是所有 $w_i \geq x$ 的 $i$<br>Greedy的想法說我們要讓起點越前面越好，所以就對set lower_bound 來更新下個起點<br>而該起點對於答案的貢獻就是 $\lfloor w_i / x \rfloor$ ，之後把起點更新到 $i + \lfloor w_i / x \rfloor \times x$</p>
+<p>我自己估這樣做的複雜度是 $O(nlog^{2}n)$ 啦，不知道這樣估是不是好的<br>也不確定這樣到底是不是好的做法或者是我唬爛過這題的</p>
 
         </div>
 
@@ -279,11 +298,11 @@
                     
                         <a href="/tags/Codeforces/"># Codeforces</a>
                     
+                        <a href="/tags/Data-Structure/"># Data Structure</a>
+                    
                         <a href="/tags/DP/"># DP</a>
                     
                         <a href="/tags/Greedy/"># Greedy</a>
-                    
-                        <a href="/tags/Data-Structure/"># Data Structure</a>
                     
                         <a href="/tags/math/"># math</a>
                     

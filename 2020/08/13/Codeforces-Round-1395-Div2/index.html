@@ -253,7 +253,7 @@
 <p>請求出最小的 $c_{1} | c_{2} | c_{3} … | c_{n}$ (bitwise OR)</p>
 <p>$(1 \leq n,m \leq 200, 0 \leq a_i, b_i &lt; 2^9)$</p>
 </blockquote>
-<p>這是基本的DP，狀態就 $dp(i, prefix) = dp(i + 1, prefix | (a_{i}$ &amp; $b_{j}))$<br>prefix 就是前綴 bitwise OR 起來的狀態， i 代表說現在正在決定 $c_i$<br>不過賽中的時候忘了好好標記 vis 陣列 吃了一次 TLE</p>
+<p>這是基本的DP，狀態就 $dp(i, prefix) = min(dp(i + 1, prefix | (a_{i}$ &amp; $b_{j})))$<br>prefix 就是前綴 bitwise OR 起來的狀態， i 代表說現在正在決定 $c_i$<br>不過賽中的時候忘了好好標記 vis 陣列 吃了一次 TLE</p>
 <h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><blockquote>
 <p>給你一個長度為 $n$ 的序列 $a$</p>
 <p>你有 $n$ 個回合 每個回合你可以從序列中選擇一個元素並且將其從序列中刪除</p>
@@ -298,13 +298,13 @@
                     
                         <a href="/tags/Codeforces/"># Codeforces</a>
                     
+                        <a href="/tags/Data-Structure/"># Data Structure</a>
+                    
                         <a href="/tags/Graph/"># Graph</a>
                     
                         <a href="/tags/DP/"># DP</a>
                     
                         <a href="/tags/Greedy/"># Greedy</a>
-                    
-                        <a href="/tags/Data-Structure/"># Data Structure</a>
                     
                         
                 </span>
