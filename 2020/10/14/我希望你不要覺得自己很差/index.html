@@ -7,7 +7,7 @@
 
 
 
-<title>Codeforces Round 1398(Div2) | Yojahuang&#39;s blog</title>
+<title>我希望你不要覺得自己很差 | Yojahuang&#39;s blog</title>
 
 
 
@@ -205,7 +205,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Codeforces Round 1398(Div2)</h1>
+            <h1 class="post-title">我希望你不要覺得自己很差</h1>
             
                 <div class="post-meta">
                     
@@ -214,70 +214,22 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">八月 16, 2020&nbsp;&nbsp;0:54:46</a>
+                        Date: <a href="#">十月 14, 2020&nbsp;&nbsp;8:37:45</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/競程/">競程</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>這場其實E不太難 感覺他想考的是實作<br>剛好我現在又不太擅長大資結的題目<br>以前蠻愛做的 但那是高二的時候了 現在對這種題目都沒有太大的把握<br>這場比賽體會到自己還是逃不掉這種題目 而且我們隊三個人好像都不太擅長這種題<br>所以有時間會再補這題<br>如果我們隊三個人至少有一個人要會的話 那就我來做吧 這是少數我能貢獻給隊伍的</p>
-<p>這篇文就分別附上我會的五題 其他題我還不會</p>
-<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><blockquote>
-<p>給你一個長度為 $n$ 的序列 $a$</p>
-<p>問你有沒有可能從該序列中挑出三個元素 使得那三個元素拼不出三角形</p>
-<p>如果有 輸出那三個元素的編號</p>
-<p>$(3 \leq n \leq 5 \cdot 10^4, 1 \leq a_i \leq 10^9, a_{i-1} \leq a_i)$</p>
-</blockquote>
-<p>國小數學告訴我們 三角形兩邊長大於第三邊<br>這時候Greedy的想法就出現了<br>我們只要找最小的兩個元素當兩邊<br>最大的那個當第三邊，然後檢查有沒有大於第三邊，如果有代表那是三角形<br>sort一下 輕鬆沒煩惱<br>這題我在寫的時候 把 $\leq$ 打成 $&lt;$ 了 好像跟上場犯的錯誤差不多</p>
-<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><blockquote>
-<p>給你一個長度 $n$ 的 01字串</p>
-<p>有兩個玩家正在進行一個遊戲 規則如下：</p>
-<p>每回合 玩家會從字串中挑一段連續的 0 或 1 ，然後將其從字串中刪除</p>
-<p>該玩家該回合的得分就是他挑到的那個subarray中 1的個數</p>
-<p>問先手玩家採取最佳的情況下，最高能拿多少分</p>
-<p>$(1 \leq n \leq 100)$</p>
-</blockquote>
-<p>你會發現說 我們根本沒必要去拿連續的0<br>因為當你拿連續的0的時候，你可能會使得原本不相鄰的兩段1接在一起<br>這樣是做球給對方(?)<br>那既然我們確定要拿1了，顯然就是挑最長的連續1拿掉<br>這樣這題就做完了，你只要用迴圈算一下每段1的大小<br>丟進去vector之類的container，sort一下 每次取最大的就好</p>
-<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><blockquote>
-<p>給你一個長度為 $n$ 的序列</p>
-<p>定義 $\displaystyle sum(L,R) = \sum_{i=L}^{R}{a_i}$</p>
-<p>請你輸出有多少 $sum(L,R)$ 符合</p>
-<p>$sum(L,R) = R - L + 1$</p>
-<p>$(1 \leq n \leq 10^5, 0 \leq a_i \leq 9)$</p>
-</blockquote>
-<p>先弄出前綴和陣列 以下叫它 $S$<br>所以我們就等於說要算下面這個東西<br>$sum(l,r) = S_{r} - S_{l-1} = r - l + 1$<br>移項一下變成<br>$S_{r} - r = S_{l-1} - (l-1)$</p>
-<p>這時候可以開一個map<br>對於每個 $i$ 把 $S_{i-1} - (i-1)$ 的個數紀錄起來<br>這樣這題就做完了</p>
-<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><blockquote>
-<p>你有 $R$ 對 紅色棍子 $G$ 對綠色棍子 $B$ 對藍色棍子</p>
-<p>每次你要挑 出兩對顏色不同的棍子 組成一個長方形</p>
-<p>該長方形對於答案的貢獻是它的面積</p>
-<p>問最大可能的答案</p>
-<p>$(1 \leq R, G, B \leq 200)$</p>
-</blockquote>
-<p>看完這題直覺會想說 那我一直挑最大的兩對出來不過好了<br>但請考慮以下測資</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 1 1</span><br><span class="line">7 7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td></tr></table></figure>
-
-<p>如果你選擇最大的兩對 答案只會是72<br>但如果你選 $7 \times 8 + 7 \times 9$ 的話，答案是119<br>所以這個直覺是錯的<br>既然沒有明確的選法，那就好好sort再DP就好囉</p>
-<p>$dp(R, G, B) = max(dp(R-1,G-1,B) + r_{R} \times g_{G}, dp(R,G-1,B-1) + g_{G} \times b_{B}, dp(R-1,G,B-1) + r_{R} \times b_{B})$</p>
-<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><p>現在有點想睡 明天補</p>
-<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><blockquote>
-<p><a href="https://codeforces.com/contest/1398/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1398/problem/F</a></p>
-<p>我放棄敘述 直接貼連結</p>
-</blockquote>
-<p>聽朋友說F其實不太難，今天去看了一下<br>在有tag提示的情況下想了半小時左右終於做出來了<br>但不確定我的複雜度是多少 有點難估</p>
-<p>我是看到 tag 提示了二分搜以後才開竅的<br>對於每個 $i$ 當作起點 我用二分搜算出那個起點最遠可以拉到多遠 以下叫它 $w_i$</p>
-<p>再來 我枚舉題目敘述的 $x$ 由小到大<br>維護一個 set 裡面是所有 $w_i \geq x$ 的 $i$<br>Greedy的想法說我們要讓起點越前面越好，所以就對set lower_bound 來更新下個起點<br>而該起點對於答案的貢獻就是 $\lfloor w_i / x \rfloor$ ，之後把起點更新到 $i + \lfloor w_i / x \rfloor \times x$</p>
-<p>我自己估這樣做的複雜度是 $O(nlog^{2}n)$ 啦，不知道這樣估是不是好的<br>也不確定這樣到底是不是好的做法或者是我唬爛過這題的</p>
+            <h1 id="我希望你不要覺得自己很差"><a href="#我希望你不要覺得自己很差" class="headerlink" title="我希望你不要覺得自己很差"></a>我希望你不要覺得自己很差</h1><p>這句話是我某個本來很好的朋友說的 後來他就沒再跟我說過話了<br>我本來就覺得自己很爛了 經過此事我更對自己失望<br>仔細想想 自己到底有什麼能贏過同儕？</p>
+<p>別人能8點半早起看書 我只會滑手機滑到快一點 隔天起來在那邊嫌累</p>
+<p>別人一年就能當上奧匹國手 我在競賽這條路上走了超過兩年連奧匹二階都沒進過</p>
+<p>別人為了夢想可以付出所有 而我努力了三年也不確定這是不是就是我要的生活</p>
+<p>更不用說我的努力有多薄弱，我很確定自己大部分的時間都沒有付出全部的努力<br>我這輩子幾乎沒有在某件事上持續付出全部的努力超過一個禮拜</p>
+<p>我身上就找不到一個成功的人有的特質<br>雖然我也不知道怎麼定義成功 但我很顯然就不是成功的人</p>
+<p>就算想著要從現在開始改變 明天醒來後還是沒辦法投入在正事</p>
 
         </div>
 
@@ -295,18 +247,6 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/Codeforces/"># Codeforces</a>
-                    
-                        <a href="/tags/Data-Structure/"># Data Structure</a>
-                    
-                        <a href="/tags/DP/"># DP</a>
-                    
-                        <a href="/tags/Greedy/"># Greedy</a>
-                    
-                        <a href="/tags/math/"># math</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -317,10 +257,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/09/14/大一上新生活/">大一上新生活</a>
             
-            
-            <a class="next" rel="next" href="/2020/08/13/Codeforces-Round-1395-Div2/">Codeforces Round 1395(Div2)</a>
+            <a class="next" rel="next" href="/2020/09/14/大一上新生活/">大一上新生活</a>
             
         </section>
 
