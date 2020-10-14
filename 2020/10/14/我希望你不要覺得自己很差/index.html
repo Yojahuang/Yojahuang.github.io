@@ -139,68 +139,6 @@
             <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
@@ -223,7 +161,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="我希望你不要覺得自己很差"><a href="#我希望你不要覺得自己很差" class="headerlink" title="我希望你不要覺得自己很差"></a>我希望你不要覺得自己很差</h1><p>這句話是我某個本來很好的朋友說的 後來他就沒再跟我說過話了<br>我本來就覺得自己很爛了 經過此事我更對自己失望<br>仔細想想 自己到底有什麼能贏過同儕？</p>
+            <p>這句話是我某個本來很好的朋友說的 後來他就沒再跟我說過話了<br>我本來就覺得自己很爛了 經過此事我更對自己失望<br>仔細想想 自己到底有什麼能贏過同儕？</p>
 <p>別人能8點半早起看書 我只會滑手機滑到快一點 隔天起來在那邊嫌累</p>
 <p>別人一年就能當上奧匹國手 我在競賽這條路上走了超過兩年連奧匹二階都沒進過</p>
 <p>別人為了夢想可以付出所有 而我努力了三年也不確定這是不是就是我要的生活</p>
