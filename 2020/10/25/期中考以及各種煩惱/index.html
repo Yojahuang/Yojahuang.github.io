@@ -7,7 +7,7 @@
 
 
 
-<title>彙整: 2020/10 | Yojahuang&#39;s blog</title>
+<title>期中考以及各種煩惱 | Yojahuang&#39;s blog</title>
 
 
 
@@ -136,40 +136,132 @@
     }
 </script>
         <div class="main">
-            <div class="post-wrap archive">
+            <div class="container">
     
     
-        
-
-        
-            <h3>2020</h3>
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2020/10/25/期中考以及各種煩惱/">期中考以及各種煩惱</a>
-            <span class="archive-item-date">十月 25, 2020</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2020/10/14/TOPC-and-NCPC/">TOPC and NCPC</a>
-            <span class="archive-item-date">十月 14, 2020</span>
-        </article>
-    
-        
-
-        
-
-        <article class="archive-item">
-            <a class="archive-item-link" href="/2020/10/14/我希望你不要覺得自己很差/">我希望你不要覺得自己很差</a>
-            <span class="archive-item-date">十月 14, 2020</span>
-        </article>
-    
-    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">期中考以及各種煩惱</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Yojahuang</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">十月 25, 2020&nbsp;&nbsp;17:04:12</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>要考六科 <code>計概</code> <code>線代</code> <code>計網概</code> <code>英文</code> <code>物理</code> <code>圖論</code><br>我太低估圖論這門課會花的時間了 英文物理可能會念不完<br>線代預計裸考 計概不用準備 計網概還沒進一步的打算</p>
+<h2 id="煩惱"><a href="#煩惱" class="headerlink" title="煩惱"></a>煩惱</h2><p>身邊同學們讀書都蠻認真的 有的讀書時間比我少也考比我好<br>讀書時間多的更不用說<br>而我最近還跟朋友吵架 被絕交了<br>無奈之下只能先收起自己的情緒 好好面對考試</p>
+<h2 id="圖論"><a href="#圖論" class="headerlink" title="圖論"></a>圖論</h2><p>圖論是最先考的 我覺得我考得還行<br>朋友們都考得比我好 但我覺得以這門課的難度有及格我就能接受<br>我的分數大概會落在 [60,70] 這個區間吧</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/10/14/TOPC-and-NCPC/">TOPC and NCPC</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
         </div>
         <footer id="footer" class="footer">
     <div class="copyright">
