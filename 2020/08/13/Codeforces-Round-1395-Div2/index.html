@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
@@ -67,14 +68,15 @@
     });
 </script>
 <!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 
     
 
 
-</head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 <body>
     <div class="wrapper">
         <header>
@@ -221,7 +223,7 @@
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/競程/">競程</a>
+                                <a href="/categories/%E7%AB%B6%E7%A8%8B/">競程</a>
                             
                         </span>
                     
@@ -275,7 +277,7 @@
 </blockquote>
 <p>一樣先道歉我敘述的有點爛 如果看不懂再點回去原題看吧</p>
 <p>這題會過pretest我後來也很問號，賽中時我把自己寫的解的複雜度算錯<br>我當下以為我的解是 $O(k^2n)$，送上去一開始TLE 壓常以後過了pretest<br>隔天發現我FST了 問了一下朋友才知道我是 $O(k!n)$ ，然後滿頭問號為什麼會過pretest<br>之後就被朋友爆雷正確的做法 這邊給上 $O(n + k! + m)$ 的做法</p>
-<p>我原本的做法是枚舉 $k!$ 種 tuple 然後 $O(n)$ 檢查有向環<br>正確的做法是用Hash去檢查是不是有向環（Hash: 哈哈是我啦，你們是不是都以為有確定性的做法啊）<br>這樣就能透過預處理去算 我不太會解釋 我就附上官解連結吧<br><a href="https://codeforces.com/blog/entry/81355" target="_blank" rel="noopener">點我</a></p>
+<p>我原本的做法是枚舉 $k!$ 種 tuple 然後 $O(n)$ 檢查有向環<br>正確的做法是用Hash去檢查是不是有向環（Hash: 哈哈是我啦，你們是不是都以為有確定性的做法啊）<br>這樣就能透過預處理去算 我不太會解釋 我就附上官解連結吧<br><a target="_blank" rel="noopener" href="https://codeforces.com/blog/entry/81355">點我</a></p>
 <h1 id="後記"><a href="#後記" class="headerlink" title="後記"></a>後記</h1><p>我寫這篇心得只是想分享我用各種奇怪方式過了 pretest<br>FST以後才發現自己錯爆，有點傻眼，有種後測的感覺<br>把 $\leq$ 打成 $&lt;$ 是蠻大的失誤的<br>這場 E 也讓我理解到原來 Hash 還能這樣用啊<br>我現在還不夠強 大概率會開始強迫自己每天都要練題</p>
 <p>想題是一件很快樂的事，但一直沒有好的成績時又有點焦慮<br>既然講好要打ICPC就要認真打 同時希望自己之後能更加享受比賽的樂趣。</p>
 
@@ -298,11 +300,11 @@
                     
                         <a href="/tags/Codeforces/"># Codeforces</a>
                     
-                        <a href="/tags/Data-Structure/"># Data Structure</a>
-                    
                         <a href="/tags/Graph/"># Graph</a>
                     
                         <a href="/tags/DP/"># DP</a>
+                    
+                        <a href="/tags/Data-Structure/"># Data Structure</a>
                     
                         <a href="/tags/Greedy/"># Greedy</a>
                     
